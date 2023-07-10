@@ -15,9 +15,9 @@ Este repositorio contiene algunos scripts de Python para recopilar los threads d
 #### get_user_profile_threads
 El script realiza las siguientes acciones:
 
-- Se conecta a una API ```threads_api.py``` y obtiene una lista de hilos de un perfil de usuario utilizando la función `get_user_profile_threads` del módulo `get_user_profile_threads`.
-- Procesa estos hilos y limpia el texto eliminando una serie de caracteres específicos.
-- Separa y recopila los datos de "me gusta" de los hilos.
+- Se conecta a una API ```threads_api.py``` y obtiene una lista de threads de un perfil de usuario utilizando la función `get_user_profile_threads` del módulo `get_user_profile_threads`.
+- Procesa estos threads y limpia el texto eliminando una serie de caracteres específicos.
+- Separa y recopila los datos de "me gusta" de los threads.
 - Almacena la información procesada en un DataFrame de Pandas.
 - Exporta el DataFrame a un archivo CSV para su posterior análisis.
 
@@ -26,7 +26,7 @@ El script realiza las siguientes acciones:
 Este script se ejecuta desde la línea de comandos de la siguiente manera:
 
 ```shell
-python <nombre_del_script>.py
+python <get_user_profile_threads>.py
 ```
 
 #### Dependencias
@@ -143,15 +143,9 @@ Instagram: [@fherz8a](https://www.instagram.com/fherz8a/)
 ## Licencia
 
 
-MIT License
+[MIT License](https://github.com/FernandaOchoa/ThreadsAPI/blob/main/LICENSE)
 
 Derechos de autor (c) 2023 Fernanda Ochoa
-
-Se concede permiso, de forma gratuita, a cualquier persona que obtenga una copia de este software y de los archivos de documentación asociados (el "Software"), para utilizar el Software sin restricciones, incluyendo, sin limitación, los derechos de uso, copia, modificación, fusión, publicación, distribución, sublicencia y/o venta de copias del Software, y para permitir a las personas a las que se les proporcione el Software a hacer lo mismo, sujeto a las siguientes condiciones:
-
-El aviso de derechos de autor anterior y este aviso de permiso se incluirán en todas las copias o partes sustanciales del Software.
-
-EL SOFTWARE SE PROPORCIONA "TAL CUAL", SIN GARANTÍA DE NINGÚN TIPO, EXPRESA O IMPLÍCITA, INCLUYENDO, PERO NO LIMITADO A, LAS GARANTÍAS DE COMERCIABILIDAD, ADECUACIÓN PARA UN PROPÓSITO PARTICULAR Y NO INFRACCIÓN. EN NINGÚN CASO, LOS AUTORES O LOS TITULARES DEL COPYRIGHT SERÁN RESPONSABLES DE NINGUNA RECLAMACIÓN, DAÑOS U OTRAS RESPONSABILIDADES, YA SEA EN UNA ACCIÓN DE CONTRATO, AGRAVIO O CUALQUIER OTRO MOTIVO, QUE SURJA DE O EN RELACIÓN CON EL SOFTWARE O EL USO U OTROS NEGOCIOS EN EL SOFTWARE.
 
 ---
 
