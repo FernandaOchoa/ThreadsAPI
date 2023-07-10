@@ -4,7 +4,7 @@ Este repositorio contiene algunos scripts de Python para recopilar los threads d
 
 ## Estructura del Proyecto
 
-* ```threads_api.py```: Contiene el script de conexión a Threads realizando ingeniería inversa. **Leer aviso legal**
+* ```threads_api.py```: Contiene el script de conexión a Threads realizando ingeniería inversa. [**Leer aviso legal**](#aviso-legal)
 * ```get_user_profile_threads.py```: Permite obtener los threads de un usuario en particular. Este código puede ser usado de forma individual o como interfaz para otras implementaciones.
 * ```getData.py```: Permite obtener los threads, limpiarlos, procesarlos, incluirlos en un dataframe para su exploración y exportar la data en un archivo csv.
 * ```threads.ipynb```: Es una implementación que muestra el uso de la data exportada lista para trabajarla con cualquier API.
