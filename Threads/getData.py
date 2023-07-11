@@ -2,31 +2,31 @@ from get_user_profile_threads import get_user_profile_threads
 import asyncio
 import pandas as pd
 
-threads_data = asyncio.run(get_user_profile_threads())
+threadsData = asyncio.run(get_user_profile_threads())
 
-if threads_data is not None:
+if threadsData is not None:
     cleanThreads = []
-    likes_data =[]
+    likesData =[]
     chars = ['"', "'", '}', '{', 'text', '\n', ':', '\'', '\"']
 
-    for thread in threads_data:
+    for thread in threadsData:
         for char in chars:
             thread = str(thread).lstrip(' ')
             thread = str(thread).replace(char, '').lstrip('"\'')
         if ', likes' in thread:
             split_data = thread.split(', likes')
             cleanThreads.append(split_data[0])
-            likes_data.append(split_data[1])
+            likesData.append(split_data[1])
         else:
             cleanThreads.append(thread)
-            likes_data.append('0')  
+            likesData.append('0')  
     df = pd.DataFrame({
-        'Cleaned Text': cleanThreads,
-        'Likes': likes_data
+        'Text': cleanThreads,
+        'Likes': likesData
     })
     df = df.dropna()
-    df['Cleaned Text'] = df['Cleaned Text'].replace('\\\\n', '', regex=True)  # Para eliminar \n
-    df['Cleaned Text'] = df['Cleaned Text'].replace('\\\\n\\\\n', '', regex=True)  # Para eliminar \n\n
+    df['Text'] = df['Text'].replace('\\\\n', '', regex=True)  # Para eliminar \n
+    df['Text'] = df['Text'].replace('\\\\n\\\\n', '', regex=True)  # Para eliminar \n\n
     print(df)
 df.to_csv('./data/data.csv', index=False,header=False)
 
