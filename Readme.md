@@ -1,6 +1,6 @@
 # Threads.Net Data Analysis
 
-Este repositorio contiene algunos scripts de Python para recopilar los threads de perfiles de usuario y analizar la data correspondientes. 
+API No Oficial en Python para recopilar los threads de perfiles de usuario y analizar la data correspondientes. 
 
 ## Estructura del Proyecto
 
