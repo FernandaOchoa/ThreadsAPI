@@ -8,6 +8,9 @@ API No Oficial en Python para recopilar los threads de perfiles de usuario y ana
 * ```get_user_profile_threads.py```: Permite obtener los threads de un usuario en particular. Este código puede ser usado de forma individual o como interfaz para otras implementaciones.
 * ```getData.py```: Permite obtener los threads, limpiarlos, procesarlos, incluirlos en un dataframe para su exploración y exportar la data en un archivo csv.
 * ```threads.ipynb```: Es una implementación que muestra el uso de la data exportada lista para trabajarla con cualquier API.
+* ```ai-samples```: Notebooks con implementaciones de modelos de procesamiento de lenguaje natural para el análisis de sentimientos con la data extraída del API.
+    * ```text-analytics.ipynb```: Notebook para realizar análisis de sentimientos con la data extraída de ```getData``` y procesada por ```threads.ipynb```.
+    * ```mined-opinions.ipynb```: Notebook para realizar minado de opiniones con la data extraída de ```getData``` y procesada por ```threads.ipynb```.
 * ```data```: Es la carpeta que almacena el archivo generado al trabajar con el archivo ```getData.py```.
 
 ### Obtener los threads de un usuario
