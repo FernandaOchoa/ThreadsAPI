@@ -1,0 +1,8 @@
+# Ignorar archivos .DS_Store generados por macOS
+.DS_Store
+
+# Ignorar archivo .env que puede contener información sensible
+.env
+
+# Ignorar carpeta de configuración de Visual Studio Code
+.vscode/
