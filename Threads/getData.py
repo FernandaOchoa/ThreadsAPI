@@ -25,8 +25,8 @@ if threadsData is not None:
         'Likes': likesData
     })
     df = df.dropna()
-    df['Text'] = df['Text'].replace('\\\\n', '', regex=True)  # Para eliminar \n
-    df['Text'] = df['Text'].replace('\\\\n\\\\n', '', regex=True)  # Para eliminar \n\n
+    df['Text'] = df['Text'].replace('\\\\n', '', regex=True)
+    df['Text'] = df['Text'].replace('\\\\n\\\\n', '', regex=True)
     print(df)
 df.to_csv('./data/data.csv', index=False,header=False)
 

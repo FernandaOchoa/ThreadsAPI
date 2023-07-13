@@ -70,41 +70,49 @@ Recoge los datos de los threads del perfil de un usuario utilizando una función
 ```python
 if threads_data is not None:
     cleanThreads = []
-    likes_data =[]
+    likesData =[]
     chars = ['"', "'", '}', '{', 'text', '\n', ':', '\'', '\"']
 ```
 
-Si `threads_data` no está vacío, el script crea dos listas vacías, `cleanThreads` y `likes_data`. La lista `chars` define los caracteres que se eliminarán del texto del hilo.
+Si `threads_data` no está vacío, el script crea dos listas vacías, `cleanThreads` y `likesData`. La lista `chars` define los caracteres que se eliminarán del texto del thread.
 
 #### Procesamiento de Datos
 
-El siguiente bloque de código procesa cada hilo en `threads_data`, limpia el texto y recoge los datos de "me gusta".
+El siguiente bloque de código procesa cada thread en `threadsData`, limpia el texto y recoge los datos de "me gusta".
 
 ```python
-for thread in threads_data:
+for thread in threadsData:
     for char in chars:
         thread = str(thread).lstrip(' ')
         thread = str(thread).replace(char, '').lstrip('"\'')
     if ', likes' in thread:
         split_data = thread.split(', likes')
         cleanThreads.append(split_data[0])
-        likes_data.append(split_data[1])
+        likesData.append(split_data[1])
     else:
         cleanThreads.append(thread)
-        likes_data.append('0')
+        likesData.append('0')
 ```
 
 #### Creación de DataFrame
 
 ```python
 df = pd.DataFrame({
-    'Cleaned Text': cleanThreads,
-    'Likes': likes_data
+    'Text': cleanThreads,
+    'Likes': likesData
 })
-print(df)
 ```
 
-Se crea un DataFrame de Pandas con los datos de texto limpios y los "me gusta", y luego imprime este DataFrame.
+Se crea un DataFrame de Pandas con los datos de texto limpios y los "me gusta".
+
+#### Procesamiento de datos
+
+```df = df.dropna()
+df['Text'] = df['Text'].replace('\\\\n', '', regex=True)
+df['Text'] = df['Text'].replace('\\\\n\\\\n', '', regex=True)
+```
+
+Eliminamos los valores nulos del dataframe con ```drop.na()```, luego creamos una expresión regular para eliminar los saltos de línea ```\n``` y los saltos de línea dobles consecutivos ```\n\n```
 
 #### Exportación de Datos
 
